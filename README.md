@@ -4,3 +4,7 @@ Basados en el curso del Prof. Pablo Farias Navarro de la plataforma de Udemy
 Link al curso 
 
 https://www.udemy.com/share/100qwSAkMYclZUTX4=/
+
+[Enlace al Curso](https://www.udemy.com/share/100qwSAkMYclZUTX4=/)
+
+Yoimar Urbina
