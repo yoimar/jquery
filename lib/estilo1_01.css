@@ -3,19 +3,14 @@ li {
 }
 
 #container {
-	padding: 30px;
+	padding: 15px;
 	background-color: yellow;
 }
 
 .class1 {
-	background-color: #9B50AF;
+	background-color: rgb(158, 149, 160);
 }
 
 .class2 {
 	background-color: green;
-}
-
-.highlighted {
-	color: blue;
-	background-color: red;
 }

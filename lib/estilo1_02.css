@@ -1,0 +1,24 @@
+li {
+	margin: 10px;
+}
+
+#container {
+	padding: 15px;
+	background-color: yellow;
+}
+
+.class1 {
+	background-color: rgb(182, 173, 184);
+}
+
+.class2 {
+	background-color: rgb(143, 212, 143);
+}
+
+.class3 {
+	background-color: rgb(120, 102, 124);
+}
+
+.class4 {
+	background-color: rgb(218, 115, 115);
+}

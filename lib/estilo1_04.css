@@ -1,0 +1,21 @@
+li {
+	margin: 10px;
+}
+
+#pruebacontainer {
+	padding: 15px;
+	background-color: yellow;
+}
+
+.class1 {
+	background-color: rgb(182, 173, 184);
+}
+
+.class2 {
+	background-color: rgb(143, 212, 143);
+}
+
+.highlighted {
+	color: white;
+	background-color: blue;
+}
