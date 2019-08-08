@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Datos</title>
+    <!-- Librerías adicionales -->
+    <script src="lib/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/datos.js"></script>
+      <!-- Bootstrap -->
+      <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="lib/estilo.css">
+    </head>
+    <body>
+      <div class="container">
+        <div class="row">
+          <div align="right" class="col-md-12">
+          <button class="btn btn-primary datos" type="button" onclick="cargarDatos()">CARGAR DATOS</button>
+        </div>
+        <div id="table" class="col-md-12">
+          <table id="datos" class="table table-bordered table-striped">
+            <thead></thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
