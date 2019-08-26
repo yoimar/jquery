@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 2 08</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Estilos de la master -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/estilo2_08.css">
+
+  <!-- Estilos de los recursos adicionales -->
+
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-pills nav-justified">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barradenavegacion"
+        aria-controls="barradenavegacion" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <a>Lista de Ejemplos</a>
+      </button>
+
+      <div class="collapse navbar-collapse collapse" id="barradenavegacion">
+        <ul class="navbar-nav navbar-nav nav-fill w-100">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              1.- Selección
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              2.- DOM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              3.- Eventos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              4.- DOM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              5.- Animaciones
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              6.- AJAX
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              7.- Formularios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">2.- Atravesando el DOM
+        </h1>
+        <div
+          class="card-body d-flex border rounded-sm shadow-sm justify-content-between align-items-center bg-light text-dark">
+          Ejercicio 08 -> Elementos Padres
+          <a href="index.html" class="btn btn-success btn-lg ml-auto">Ir a Página Principal</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editar desde aquí  -->
+
+    <p>En el siguiente código html Atravesaremos el DOM utilizando la función first(), last(), prev(), next():</p>
+    <div class="row">
+      <div class="col-md-4">
+        <p>Listas con atributos:</p>
+        <div id="animals" class="creature category">Animals
+          <div class="creature category">Mammals
+              <div class="creature">Dogs</div>
+              <div class="creature" id="cat">Cats</div>
+              <div class="terrain">Forest</div>
+              <div class="terrain">Prairie</div>
+          </div>
+          <div class="creature category">Reptiles
+              <div class="creature">Snake</div>
+              <div class="creature">Lizard</div>
+              <div class="terrain">Jungle</div>
+          </div>
+      </div>
+      </div>
+      <div class="col-md-8">
+        <p>Codigo Javascrip:</p>
+
+        <pre class="p-3 mb-2 bg-dark text-white"><code>$(document).ready(function() {
+//parent()
+            var result = $('#cat').parent();
+            console.log(result);
+//parents()
+            result = $('#cat').parents('.category');
+            console.log(result);
+//closest()
+            result = $('#cat').closest('.category');
+            console.log(result);
+});</code></pre>
+
+        <p>Codigo CSS:</p>
+
+        <pre
+          class="p-2 mb-1 bg-info text-white"><code>.creature {
+            margin: 20px;
+            background-color: #FFE1FF;
+            border: 1px solid #8B7B8B;
+          }
+.terrain {
+            margin: 20px;
+            background-color: green;
+            border: 1px solid #8B7B8B;
+          }</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- Hasta aquí modificaremos -->
+  </div>
+
+
+  <!-- Librerías adicionales -->
+  <script src="lib/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Librerías de plugins -->
+
+
+  <!-- Archivo personalizado de Javascript -->
+  <script src="lib/ejercicio2_08.js"></script>
+
+</body>
+
+</html>
