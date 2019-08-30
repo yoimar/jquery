@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 3 11</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Estilos de la master -->
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/estilo3_11.css">
+
+  <!-- Estilos de los recursos adicionales -->
+
+
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary nav-pills nav-justified">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barradenavegacion"
+        aria-controls="barradenavegacion" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span> <a>Lista de Ejemplos</a>
+      </button>
+
+      <div class="collapse navbar-collapse collapse" id="barradenavegacion">
+        <ul class="navbar-nav navbar-nav nav-fill w-100">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              1.- Selección
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              2.- DOM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              3.- Eventos
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              4.- DOM
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              5.- Animaciones
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              6.- AJAX
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              7.- Formularios
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdown08">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1 class="display-3">3.- Trabajando con eventos</h1>
+        <div
+          class="card-body d-flex border rounded-sm shadow-sm justify-content-between align-items-center bg-light text-dark">
+          Ejercicio 11 -> Ejemplo de uso de eventos
+          <a href="index.html" class="btn btn-success btn-lg ml-auto">Ir a Página Principal</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Editar desde aquí  -->
+
+    <p>En el siguiente código html realizaremos selecciones por Atributo:</p>
+    <div class="row">
+      <div class="col-md-4">
+        <p>Formulario a:</p>
+        <div class="row">
+
+          <div id="fondorow" class="col-md-12">
+
+            <div id="example" class="containersmall">
+              <select id="place">
+                <option value="">Pick your destination</option>
+                <option value="santiago" data-price="100">Santiago</option>
+                <option value="madrid" data-price="180">Madrid</option>
+                <option value="yakarta" data-price="300">Yakarta</option>
+                <option value="istambul" data-price="150">Istambul</option>
+                <option value="tokyo" data-price="200">Tokyo</option>
+              </select>
+              <button>Pick</button>
+              
+              
+            </div>
+            <hr>
+            <div id="result" class="containersmall">
+                
+            </div>
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <p>Codigo Javascrip:</p>
+
+        <pre class="p-3 mb-2 bg-dark text-white"><code>$(document).ready(function () {
+$('#example').on('click', 'button', function() {
+  var selected = $('#place option:selected');
+  var value = selected.val();
+  var price = selected.data('price');
+  console.log(value);
+  console.log(price);
+  console.log(selected.attr('data-price'));
+  if(price) {
+    $('#result').html(value + ' ' + price);
+  }
+});
+});</code></pre>
+
+        <p>Codigo CSS:</p>
+
+        <pre class="p-2 mb-1 bg-info text-white"><code>#fondorow { 	background-color: #9B50AF; }
+.highlighted { 	background-color: #E17BBA!important; }
+#example { 	width: 100px; 	height: 100px; 	margin: 150px auto;	
+background-color: #3BEAB4; 
+}
+button { 
+background-color: #F46D63; color: white; font-weight: bold; 
+border:none; padding: 5px; width: 100px; margin: 35px auto; 
+}</code></pre>
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Hasta aquí modificaremos -->
+  </div>
+
+
+  <!-- Librerías adicionales -->
+  <script src="lib/jquery.min.js"></script>
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Librerías de plugins -->
+
+
+  <!-- Archivo personalizado de Javascript -->
+  <script src="lib/ejercicio3_11.js"></script>
+
+</body>
+
+</html>

@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Ejercicio 1 04</title>
+  <title>Ejercicio 3 09</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Estilos de la master -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/estilo1_04.css">
+  <link rel="stylesheet" href="lib/estilo3_09.css">
 
   <!-- Estilos de los recursos adicionales -->
 
@@ -111,10 +111,10 @@
 
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-3">1.- Selección del DOM</h1>
+        <h1 class="display-3">3.- Trabajando con eventos</h1>
         <div
           class="card-body d-flex border rounded-sm shadow-sm justify-content-between align-items-center bg-light text-dark">
-          Ejercicio 04 -> Selección por Atributos
+          Ejercicio 09 -> Evento Click
           <a href="index.html" class="btn btn-success btn-lg ml-auto">Ir a Página Principal</a>
         </div>
       </div>
@@ -125,134 +125,43 @@
     <p>En el siguiente código html realizaremos selecciones por Atributo:</p>
     <div class="row">
       <div class="col-md-4">
-    <p>Formulario:</p>
+    <p>Formulario a:</p>
     <div class="row">
-    <div id="prueba1" class="border rounded-sm shadow-sm text-center w-100">
-      <div>
-        <input type="text" required placeholder="First Name" />
+      
+    <div id="fondorow" class="col-md-12">
+      <div id="example">    	
       </div>
-      <div>
-        <input type="text" required placeholder="Last Name" />
-      </div>
-      <div>
-        <input type="text" placeholder="Phone" />
-      </div>
-      <div>
-        <input type="text" required placeholder="Email" />
-      </div>
-      <div>
-        <input type="text" placeholder="School" />
-      </div>
-      <div>
-        <button>Submit</button>
-      </div>
-      </div>
+    </div>
+    
     </div>
   </div>
   <div class="col-md-8">
       <p>Codigo Javascrip:</p>
 
       <pre class="p-3 mb-2 bg-dark text-white"><code>$(document).ready(function () {
-  $('#prueba1 > div > input[required]').addClass('highlighted');
+    $('#example').on('click', function() {
+            
+      $(this).toggleClass('highlighted');
+        
+    });
 });</code></pre>
 
 <p>Codigo CSS:</p>
 
-<pre class="p-2 mb-1 bg-info text-white"><code>.highlighted { color: white; background-color: blue;  }</code></pre>
+<pre class="p-2 mb-1 bg-info text-white"><code>#fondorow {
+	background-color: #9B50AF;
+}
+.highlighted { 	background-color: #E17BBA!important; }
+
+#example {
+	width: 100px; 	height: 100px; 	margin: 150px auto;	background-color: #3BEAB4;
+}</code></pre>
 
 </div>
   
   </div>
 
-  <div class="row">
-      <div class="col-md-4">
-    <p>Formulario:</p>
-    <div class="row">
-    <div id="prueba2" class="border rounded-sm shadow-sm text-center w-100">
-      <div>
-        <input type="text" required placeholder="First Name" />
-      </div>
-      <div>
-        <input type="text" required placeholder="Last Name" />
-      </div>
-      <div>
-        <input type="text" placeholder="Phone" />
-      </div>
-      <div>
-        <input type="text" required placeholder="Email" />
-      </div>
-      <div>
-        <input type="text" placeholder="School" />
-      </div>
-      <div>
-        <button>Submit</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-      <p>Codigo Javascrip:</p>
-
-      <pre class="p-2 mb-1 bg-dark text-white"><code>$(document).ready(function () {
-  $('#prueba2 > div > input[placeholder="Phone"]').addClass('highlighted');
-});</code></pre>
   
-  
-      <p>Codigo CSS:</p>
-
-      <pre class="p-2 mb-1 bg-info text-white"><code>.highlighted { color: white; background-color: blue;  }</code></pre>
-      
-      </div>
-  
-  </div>
-
-  <div class="row">
-      <div class="col-md-4">
-    <p>Formulario:</p>
-    <div class="row">
-    <div id="prueba3" class="border rounded-sm shadow-sm text-center w-100">
-      <div>
-        <input type="text" required placeholder="First Name" />
-      </div>
-      <div>
-        <input type="text" required placeholder="Last Name" />
-      </div>
-      <div>
-        <input type="text" placeholder="Phone" />
-      </div>
-      <div>
-        <input type="text" required placeholder="Email" />
-      </div>
-      <div>
-        <input type="text" placeholder="School" />
-      </div>
-      <div>
-        <button>Submit</button>
-      </div>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-8">
-      <p>Codigo Javascrip:</p>
-
-      <pre class="p-2 mb-1 bg-dark text-white"><code>$(document).ready(function () {
-  $('#prueba3 > div > input[placeholder*="Name"]').addClass('highlighted');
-});</code></pre>
-  
-  
-      <p>Codigo CSS:</p>
-
-      <pre class="p-2 mb-1 bg-info text-white"><code>.highlighted { color: white; background-color: blue;  }</code></pre>
-      
-      </div>
-  
-  </div>
-    
-
-    
-
-
-
 
 
 
@@ -270,7 +179,7 @@
 
 
   <!-- Archivo personalizado de Javascript -->
-  <script src="lib/ejercicio1_04.js"></script>
+  <script src="lib/ejercicio3_09.js"></script>
 
 </body>
 

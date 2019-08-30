@@ -1,4 +1,4 @@
-body {
+#fondorow {
 	font-family: arial;
 	background-color: #9B50AF;
 }
@@ -7,11 +7,19 @@ body {
 	background-color: #E17BBA!important;
 }
 
-#example {
-	width: 100px;
-	height: 100px;
-	margin: 150px auto;	
+.containersmall {
+	width: 300px;	
 	background-color: #3BEAB4;
+	height: 100px;
+	padding: 20px;
+	margin: 50px auto ;	
+}
+
+#result {
+	font-size: 20pt;
+	vertical-align: center;
+	line-height: 100px;
+	text-align: center;
 }
 
 button {
@@ -20,6 +28,6 @@ button {
 	font-weight: bold;
 	border:none;
 	padding: 5px;
-	width: 100px;
-	margin: 35px auto;
+	margin-top: 35px;
+	margin-left: 18px;
 }
