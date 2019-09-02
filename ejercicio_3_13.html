@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Ejercicio 3 12</title>
+  <title>Ejercicio 3 13</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Estilos de la master -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/estilo3_12.css">
+  <link rel="stylesheet" href="lib/estilo3_13.css">
 
   <!-- Estilos de los recursos adicionales -->
 
@@ -114,7 +114,7 @@
         <h1 class="display-3">3.- Trabajando con eventos</h1>
         <div
           class="card-body d-flex border rounded-sm shadow-sm justify-content-between align-items-center bg-light text-dark">
-          Ejercicio 12 -> Evento Change
+          Ejercicio 13 -> Eventos del teclado
           <a href="index.html" class="btn btn-success btn-lg ml-auto">Ir a Página Principal</a>
         </div>
       </div>
@@ -130,19 +130,10 @@
 
           <div id="fondorow" class="col-md-12">
 
-            <div id="example" class="containersmall">
-              <select id="place">
-                <option value="">Pick your destination</option>
-                <option value="santiago" data-price="100">Santiago</option>
-                <option value="madrid" data-price="180">Madrid</option>
-                <option value="yakarta" data-price="300">Yakarta</option>
-                <option value="istambul" data-price="150">Istambul</option>
-                <option value="tokyo" data-price="200">Tokyo</option>
-              </select>
-              <button>Pick</button>
-              
-              
+            <div id="example" class="containersmall text-center">   
+                <input type="text" />
             </div>
+              
             <hr>
             <div id="result" class="containersmall">
                 
@@ -156,25 +147,22 @@
         <p>Codigo Javascrip:</p>
 
         <pre class="p-3 mb-2 bg-dark text-white"><code>$(document).ready(function () {
-$('#example').on('change', '#place', function() {
-  var selected = $('#place option:selected');
-  var value = selected.val();
-  var price = selected.data('price');
-
-  if(price) {
-    $('#result').html(value + ' ' + price);
-  }
-})
+//keydown, keyup
+$('#example').on('keyup', 'input', function() {
+  $('#result').html('Your name is: ' + $(this).val());
+});
 });</code></pre>
 
         <p>Codigo CSS:</p>
 
         <pre class="p-2 mb-1 bg-info text-white"><code>#fondorow { font-family: arial; background-color: #9B50AF; }
 .highlighted { background-color: #E17BBA!important; }
-.containersmall { width: 300px;	background-color: #3BEAB4; height: 100px; padding: 20px; margin: 50px auto; }
-#result { font-size: 20pt; vertical-align: center; line-height: 100px; text-align: center; }
-button { background-color: #F46D63; color: white; font-weight: bold; border:none; 
-  padding: 5px; margin-top: 35px; margin-left: 18px; }</code></pre>
+.containersmall { width: 300px;	background-color: #3BEAB4; height: 100px; 
+  padding: 20px; margin: 50px auto; }
+#result { font-size: 20pt; vertical-align: center; 
+  line-height: 100px; text-align: center; }
+button { background-color: #F46D63; color: white; font-weight: bold; 
+  border:none; padding: 5px; margin-top: 35px; margin-left: 18px; }</code></pre>
 
       </div>
 
@@ -198,7 +186,7 @@ button { background-color: #F46D63; color: white; font-weight: bold; border:none
 
 
   <!-- Archivo personalizado de Javascript -->
-  <script src="lib/ejercicio3_12.js"></script>
+  <script src="lib/ejercicio3_13.js"></script>
 
 </body>
 

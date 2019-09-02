@@ -1,4 +1,4 @@
-body {
+#fondorow {
 	font-family: arial;
 	background-color: #9B50AF;
 }
@@ -7,8 +7,10 @@ body {
 	background-color: #E17BBA!important;
 }
 
-.container {
+.containersmall {
+	width: 300px;	
 	background-color: #3BEAB4;
+	height: 100px;
 	padding: 20px;
 	margin: 50px auto ;	
 }
