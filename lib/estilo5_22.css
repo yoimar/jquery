@@ -1,0 +1,14 @@
+#fondorow {
+	font-family: arial;
+	background-color: #9B50AF;
+	padding-bottom: 20px;
+}
+
+.example {
+	position: relative;
+	left: 20px;
+	width: 100px;
+	height: 100px;
+	margin-top: 20px;	
+	background-color: #3BEAB4;
+}

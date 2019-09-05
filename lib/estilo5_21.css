@@ -1,4 +1,4 @@
-body {
+#fondorow {
 	font-family: arial;
 	background-color: #9B50AF;
 }
@@ -17,13 +17,13 @@ header a {
 	color: white;
 }
 
-.item-box {
-	width: 150px;
+.item-box-tarjeta {
+	width: 200px;
 	margin: 20px;
 	min-height: 200px;
 	float: left;
 	background-color: #3BEAB4;
-	padding: 10px;
+	padding: 20px;
 }
 
 .item-title {
