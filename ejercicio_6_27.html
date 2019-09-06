@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Ejercicio 5 20</title>
+  <title>Ejercicio 6 27</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Estilos de la master -->
   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="lib/estilo5_20.css">
+  <link rel="stylesheet" href="lib/estilo6_27.css">
 
   <!-- Estilos de los recursos adicionales -->
 
@@ -108,13 +108,15 @@
     </nav>
 
 
-
+    <header>
+        <a href="#" id="total-cost">Total $0</a>
+    </header>
     <div class="jumbotron">
       <div class="container">
-        <h1 class="display-3">5.- Animaciones y Efectos</h1>
+        <h1 class="display-3">6.- AJAX</h1>
         <div
           class="card-body d-flex border rounded-sm shadow-sm justify-content-between align-items-center bg-light text-dark">
-          Ejercicio 20 -> Efecto Fade
+          Ejercicio 27 -> AJAX con metodo POST 
           <a href="index.html" class="btn btn-success btn-lg ml-auto">Ir a Página Principal</a>
         </div>
       </div>
@@ -122,24 +124,24 @@
 
     <!-- Editar desde aquí  -->
 
-    <p>En el siguiente código html realizamos manipulación del DOM:</p>
+    <p>En el siguiente código html realizaremos peticiones AJAX:</p>
     <div class="row">
-      <div class="col-md-4">
-        <p>Formulario a:</p>
+      <div class="col-md-6">
+        <p>Objetos con peticiones AJAX:</p>
         <div class="row">
 
           <div id="fondorow" class="col-md-12">
 
-            <div class="item-box-tarjeta col-md-8" data-price="199">
+            <div class="item-box-tarjeta col-md-6" data-id="8">
               <img src="lib/images/image.png" />
               <div class="item-title">Bahía Inglesa</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad</p>
               <div class="item-price">$199</div>
               <button>Add to cart</button>
                 <div>
                  <a href="#" class="info-link">More info</a>
               </div>
-                <div class="more-info">
+              <div class="more-info">
                     <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem</p>
               </div>
             </div>
@@ -148,19 +150,37 @@
           </div>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
         <p>Codigo Javascript:</p>
 
         <pre class="p-3 mb-2 bg-dark text-white"><code>$(document).ready(function () {
-          $('.item-box-tarjeta').on('click', 'a.info-link', function(event){
-            event.preventDefault();
-            //In -> muestra
-            //Out -> Oculta
-            //Toggle -> muestra u oculta
-            $(this).closest('.item-box-tarjeta').find('.more-info').fadeToggle(1000, function(){
-              //alert('Se completo!');
-            });
-          });
+$.ajax('destinations.json', {
+  dataType: 'json',
+  contentType: 'application/json',
+  cache: false
+  })
+  .done(function(response){
+    console.log(response);
+    var html;
+    $.each(response, function(index, element){
+      html = '&lt;div class=&quot;item-box-tarjeta col-md-6&quot; data-id=&quot;'+element.id+'&quot;&gt;';
+      html += '&lt;img src=&quot;lib/images/'+element.image+'&quot; /&gt;';
+      html += '&lt;div class=&quot;item-title&quot;&gt;'+element.name+'&lt;/div&gt;';
+      html += '&lt;p&gt;'+element.description+'&lt;/p&gt;';
+      html += '&lt;div class=&quot;item-price&quot;&gt;$'+element.price+'&lt;/div&gt;';
+      html += '&lt;button&gt;Add to cart&lt;/button&gt;';
+      html += '&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;info-link&quot;&gt;More info&lt;/a&gt;&lt;/div&gt;';
+      html += '&lt;div class=&quot;more-info&quot;&gt;&lt;p&gt;'+element.moreInfo+'&lt;/p&gt;&lt;/div&gt;';
+      html += '&lt;/div&gt;';
+  
+    $('#fondorow').append(html);
+    });
+  });
+
+$('#fondorow').on('click', 'a.info-link', function(event){
+  event.preventDefault();
+  $(this).closest('.item-box-tarjeta').find('.more-info').slideToggle('fast');
+});
 });</code></pre>
 
         <p>Codigo CSS:</p>
@@ -198,7 +218,7 @@ button { background-color: #E17BBA; color: white; font-weight: bold; border:none
 
 
   <!-- Archivo personalizado de Javascript -->
-  <script src="lib/ejercicio5_20.js"></script>
+  <script src="lib/ejercicio6_27.js"></script>
 
 </body>
 
