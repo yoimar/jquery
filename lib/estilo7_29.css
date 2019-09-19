@@ -1,0 +1,22 @@
+.form-container {
+	background-color: #3BEAB4;
+	width: 270px;
+	margin: 50px auto;
+	padding: 10px 10px 10px 10px; 	
+}
+
+.form-row {
+	margin: 10px;
+}
+
+#pet-feedback {
+	height: 10px;
+}
+
+#result {
+	text-align: center;
+}
+
+#pets-row {
+	display: none;
+}
